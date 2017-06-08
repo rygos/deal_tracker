@@ -12,6 +12,11 @@
 */
 
 Route::get('/', 'IndexController@index');
+
+Route::get('/access_denied', function(){
+   return View::make('errors.access_denied');
+});
+
 Route::get('/import', 'ImportController@index');
 Route::post('/import', 'ImportController@import');
 

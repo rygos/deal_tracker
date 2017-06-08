@@ -6,7 +6,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8"/>
-	<title>Deal Tracker</title>
+	<title>Deal Tracker | {{ config('app.page.version') }}</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1" name="viewport"/>
 	<meta content="" name="description"/>
@@ -15,6 +15,12 @@
 	<link rel="stylesheet" href="{{ asset("assets/stylesheets/styles.css") }}" />
 </head>
 <body>
+	@if(\App\Helpers\AuthHelper::user() == null)
+		@if(!Request::is('*access_denied'))
+			<script type="text/javascript"> window.location = "{{ url('/access_denied') }}"; //redirect </script>
+		@endif
+	@endif
+
 	@yield('body')
 	<script src="{{ asset("assets/scripts/frontend.js") }}" type="text/javascript"></script>
 </body>

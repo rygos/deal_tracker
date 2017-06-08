@@ -1,6 +1,10 @@
 <?php
 
 return [
+    //Seitenweite Settings
+    'page' => [
+        'version' => '0.0.1', //Seitenversion
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -170,6 +174,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         //
 
         /*
@@ -180,6 +185,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
 
     ],
 
