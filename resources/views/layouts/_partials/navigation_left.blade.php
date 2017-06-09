@@ -12,12 +12,21 @@
 <li {{ (Request::is('/') ? 'class="active"' : '') }}>
     <a href="{{ url ('') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
 </li>
+<li>
+    <a href="#"><i class="fa fa-table fa-fw"></i> Deals<span class="fa arrow"></span></a>
+    <ul class="nav nav-second-level">
+        <li {{ (Request::is('*deals') ? 'class="active"' : '') }}>
+            <a href="{{ url ('deals') }}"> Übersicht</a>
+        </li>
+        <li {{ (Request::is('*deals/add') ? 'class="active"' : '') }}>
+            <a href="{{ url ('deals/add' ) }}"> Hinzufügen</a>
+        </li>
+    </ul>
+    <!-- /.nav-second-level -->
+</li>
 <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
     <a href="{{ url ('charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
     <!-- /.nav-second-level -->
-</li>
-<li {{ (Request::is('*deals') ? 'class="active"' : '') }}>
-    <a href="{{ url ('deals') }}"><i class="fa fa-table fa-fw"></i> Deals</a>
 </li>
 <li {{ (Request::is('*tables') ? 'class="active"' : '') }}>
     <a href="{{ url ('tables') }}"><i class="fa fa-table fa-fw"></i> Tables</a>
