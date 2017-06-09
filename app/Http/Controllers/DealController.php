@@ -8,11 +8,36 @@ use Illuminate\Http\Request;
 class DealController extends Controller
 {
     public function index(){
-        return view('deals.index');
+        //laden der deals
+        $deals = \DB::table('dt_master')->where('costdeskowner', '=', 0)->orderBy('create_date', 'desc')->paginate(20);
+
+        //Füllen des Statusarrays
+        $status = \DB::table('dt_status')->get();
+        $status_return = array();
+        foreach($status as $s){
+            $status_return[$s->id] = $s->value;
+        }
+
+        //Füllen der Gewinnchance
+        $cow = \DB::table('dt_chanceofwin')->get();
+        $cow_return = array();
+        foreach($cow as $c){
+            $cow_return[$c->id] = $c->value;
+        }
+
+        return view('deals.index', [
+            'deals' => $deals,
+            'status' => $status_return,
+            'chanceofwin' => $cow_return,
+        ]);
     }
 
     public function show($deal_id){
-        return view('deals.show');
+        $deal = \DB::table('dt_master')->where('id', '=', $deal_id)->first();
+
+        return view('deals.show', [
+            'deal' => $deal,
+        ]);
     }
 
     public function create(){
@@ -40,7 +65,7 @@ class DealController extends Controller
     public function store(Request $request){
         \DB::table('dt_master')->insert([
              'create_date' => $request->get('create_date'),
-            'crmwft'=>$request->get('crmwft'),
+            'crm_wft'=>$request->get('crmwft'),
             'customer' => $request->get('create_date'),
             'short_desc' => $request->get('short_desc'),
             'onsitecc' => $request->get('onsitecc'),
@@ -67,6 +92,7 @@ class DealController extends Controller
             'cost_intern' =>             $request->get('cost_intern'),
             'cost_extern'=>$request->get('cost_extern'),
             'cost_software'=> $request->get('cost_software'),
+            'variants' => 1,
         ]);
 
         return redirect()->action('DealController@index');
