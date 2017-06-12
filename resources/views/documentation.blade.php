@@ -1,6 +1,6 @@
 @extends ('layouts.dashboard')
 
-@section ('page_heading','Documentation')
+@section ('page_heading','Dokumentation')
 
 @section('section')
 
