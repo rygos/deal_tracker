@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\AuthHelper;
+use App\Models\DtMaster;
 use Illuminate\Http\Request;
 
 class DealController extends Controller
@@ -10,11 +11,9 @@ class DealController extends Controller
     public function index()
     {
         //laden der deals
-        $deals = \DB::table('dt_master')
-            ->where('costdeskowner', '=', AuthHelper::user()->id)
-            ->orderBy('create_date', 'desc')
-            ->paginate(20);
-        $deals = \DB::table('dt_master')->orderBy('create_date', 'desc')->paginate(20);
+        //$deals = \DB::table('dt_master')->where('costdeskowner', '=', AuthHelper::user()->id)->orderBy('create_date', 'desc')->paginate(20);
+        //$deals = \DB::table('dt_master')->orderBy('create_date', 'desc')->paginate(20);
+        $deals = DtMaster::orderBy('create_date', 'desc')->paginate(20);
 
         //Füllen des Statusarrays
         $status = \DB::table('dt_status')->get();
