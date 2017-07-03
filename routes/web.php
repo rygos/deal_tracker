@@ -20,13 +20,17 @@ Route::get('/access_denied', function(){
 Route::get('/import', 'ImportController@index');
 Route::post('/import', 'ImportController@import');
 
-//Deals Routen
+//Deals Routes
 Route::get('/deals', 'DealController@index');
 Route::get('/deals/add', 'DealController@create');
 Route::post('/deals/add', 'DealController@store');
 Route::get('/deals/{deal_id}/edit', 'DealController@edit');
 Route::post('/deals/{deal_id}/edit', 'DealController@update');
 Route::get('/deal/{deal_id}', 'DealController@show');
+
+//Report Routes
+Route::get('reports', 'Reports\CockpitController@index');
+
 
 Route::get('/charts', function()
 {

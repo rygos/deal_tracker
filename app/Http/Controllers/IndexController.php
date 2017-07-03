@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class IndexController extends Controller
 {
     public function index(){
+        // Status Widgets for Dashboard
         $dealcount = DB::table('dt_master')
             ->selectRaw('COUNT(id) as counter')
             ->first();
