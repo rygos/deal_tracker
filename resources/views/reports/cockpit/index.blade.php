@@ -41,9 +41,10 @@
                             </td>
                         @endfor
                     </tr>
-                    <td bgcolor="#FFFFFF" style="line-height:10px;" colspan=13>&nbsp;</td>
+                    <tr><td bgcolor="#FFFFFF" style="line-height:10px;" colspan=13>&nbsp;</td></tr>
+                    <tr><td bgcolor="#FFFFFF" style="line-height:10px;" colspan=13>Deal Type</td></tr>
                     <tr>
-                        <td>Dealtype CC-Pack</td>
+                        <td>CC-Pack</td>
                         @for($i = 11; $i >= 0; $i--)
                             <td>
                                 {{ number_format($data[$i]['dtccpack'], 0, ',', '.') }}
@@ -51,7 +52,7 @@
                         @endfor
                     </tr>
                     <tr>
-                        <td>Dealtype CC-Plus</td>
+                        <td>CC-Plus</td>
                         @for($i = 11; $i >= 0; $i--)
                             <td>
                                 {{ number_format($data[$i]['dtccplus'], 0, ',', '.') }}
@@ -59,10 +60,44 @@
                         @endfor
                     </tr>
                     <tr>
-                        <td>Dealtype Complex</td>
+                        <td>Complex</td>
                         @for($i = 11; $i >= 0; $i--)
                             <td>
                                 {{ number_format($data[$i]['dtcomplex'], 0, ',', '.') }}
+                            </td>
+                        @endfor
+                    </tr>
+                    <tr><td bgcolor="#FFFFFF" style="line-height:10px;" colspan=13>&nbsp;</td></tr>
+                    <tr><td bgcolor="#FFFFFF" style="line-height:10px;" colspan=13>Financial classification</td></tr>
+                    <tr>
+                        <td>0 - 10k</td>
+                        @for($i = 11; $i >= 0; $i--)
+                            <td>
+                                {{ number_format($data[$i]['fc1k'], 0, ',', '.') }}
+                            </td>
+                        @endfor
+                    </tr>
+                    <tr>
+                        <td>11k - 100k</td>
+                        @for($i = 11; $i >= 0; $i--)
+                            <td>
+                                {{ number_format($data[$i]['fc11k'], 0, ',', '.') }}
+                            </td>
+                        @endfor
+                    </tr>
+                    <tr>
+                        <td>101k - 1M</td>
+                        @for($i = 11; $i >= 0; $i--)
+                            <td>
+                                {{ number_format($data[$i]['fc101k'], 0, ',', '.') }}
+                            </td>
+                        @endfor
+                    </tr>
+                    <tr>
+                        <td>> 1M</td>
+                        @for($i = 11; $i >= 0; $i--)
+                            <td>
+                                {{ number_format($data[$i]['fc1m'], 0, ',', '.') }}
                             </td>
                         @endfor
                     </tr>
