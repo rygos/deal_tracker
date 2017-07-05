@@ -29,7 +29,7 @@
                         <td>Deal Values</td>
                         @for($i = 11; $i >= 0; $i--)
                             <td>
-                                {{ number_format($data[$i]['dv'], 0, ',', '.') }} €
+                                {{ number_format($data[$i]['dv'], 0, ',', '.') }}€
                             </td>
                         @endfor
                     </tr>
@@ -98,6 +98,32 @@
                         @for($i = 11; $i >= 0; $i--)
                             <td>
                                 {{ number_format($data[$i]['fc1m'], 0, ',', '.') }}
+                            </td>
+                        @endfor
+                    </tr>
+                    <tr><td bgcolor="#FFFFFF" style="line-height:10px;" colspan=13>&nbsp;</td></tr>
+                    <tr><td bgcolor="#FFFFFF" style="line-height:10px;" colspan=13>Cancelled</td></tr>
+                    <tr>
+                        <td>Total</td>
+                        @for($i = 11; $i >= 0; $i--)
+                            <td>
+                                {{ number_format($data[$i]['canceltotal'], 0, ',', '.') }}
+                            </td>
+                        @endfor
+                    </tr>
+                    <tr>
+                        <td>Ratio</td>
+                        @for($i = 11; $i >= 0; $i--)
+                            <td>
+                                {{ number_format($data[$i]['cancelratio']  / ($data[$i]['tnd']+1), 0, ',', '.') }}%
+                            </td>
+                        @endfor
+                    </tr>
+                    <tr>
+                        <td>Deal Value</td>
+                        @for($i = 11; $i >= 0; $i--)
+                            <td>
+                                {{ number_format($data[$i]['cancelvalue'], 0, ',', '.') }}€
                             </td>
                         @endfor
                     </tr>

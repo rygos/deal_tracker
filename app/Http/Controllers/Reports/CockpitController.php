@@ -68,6 +68,22 @@ class CockpitController extends Controller
                 ->where('create_date', '<=',  $t['month_end'])
                 ->where('revenue', '>=', 1000001)
                 ->count();
+
+            $t['canceltotal'] = $master
+                ->where('create_date', '>=', $t['month_start'])
+                ->where('create_date', '<=',  $t['month_end'])
+                ->where('status', '=', 6)
+                ->count();
+            $t['cancelratio'] = $master
+                ->where('create_date', '>=', $t['month_start'])
+                ->where('create_date', '<=',  $t['month_end'])
+                ->where('status', '=', 6)
+                ->Sum('id');
+            $t['cancelvalue'] = $master
+                ->where('create_date', '>=', $t['month_start'])
+                ->where('create_date', '<=',  $t['month_end'])
+                ->where('status', '=', 6)
+                ->Sum('revenue');
             $data[$i-1] = $t;
         }
 
