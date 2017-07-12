@@ -33,6 +33,9 @@ Route::get('reports', 'Reports\CockpitController@index');
 Route::get('reports/deals_per_month/{year?}/{month?}', 'Reports\DealsPerMonthController@index');
 
 
+//Search Route
+Route::get('search/{term?}', 'SearchController@search');
+
 Route::get('/documentation', function()
 {
     return View::make('documentation');

@@ -1,13 +1,15 @@
 <li class="sidebar-search">
+    {{ Form::open(['action' => 'SearchController@search', 'method' => 'get']) }}
     <div class="input-group custom-search-form">
-        <input type="text" class="form-control" placeholder="Search...">
+        <input name="term" type="text" class="form-control" placeholder="Search...">
         <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
     </div>
-    <!-- /input-group -->
+{{ Form::close() }}
+<!-- /input-group -->
 </li>
 <li {{ (Request::is('/') ? 'class="active"' : '') }}>
     <a href="{{ url ('') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
