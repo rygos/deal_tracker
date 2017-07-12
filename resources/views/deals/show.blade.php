@@ -37,23 +37,23 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         <strong>IMAC</strong>
-                        <span class="badge">{{ (is_null($deal->imac))?'':'TRUE' }}</span>
+                        <span class="badge">{{ (($deal->imac == 0))? '':'TRUE' }}</span>
                     </li>
                     <li class="list-group-item">
                         <strong>OnSite CC</strong>
-                        <span class="badge">{{ (is_null($deal->onsitecc))?'':'TRUE' }}</span>
+                        <span class="badge">{{ (($deal->onsitecc == 0))?'':'TRUE' }}</span>
                     </li>
                     <li class="list-group-item">
                         <strong>SWAP</strong>
-                        <span class="badge">{{ (is_null($deal->swap))?'':'TRUE' }}</span>
+                        <span class="badge">{{ (($deal->swap == 0))?'':'TRUE' }}</span>
                     </li>
                     <li class="list-group-item">
                         <strong>Resold / Sub</strong>
-                        <span class="badge">{{ (is_null($deal->resold_sub))?'':'TRUE' }}</span>
+                        <span class="badge">{{ (($deal->resold_sub == 0))?'':'TRUE' }}</span>
                     </li>
                     <li class="list-group-item">
                         <strong>Callrouting</strong>
-                        <span class="badge">{{ (is_null($deal->callrouting))?'':'TRUE' }}</span>
+                        <span class="badge">{{ (($deal->callrouting == 0))?'':'TRUE' }}</span>
                     </li>
                 </ul>
             </div>
@@ -109,11 +109,11 @@
                     </li>
                     <li class="list-group-item">
                         <strong>Ziel Datum</strong>
-                        <span class="pull-right">{{ $deal->due_date }}</span>
+                        <span class="pull-right">{{ \Carbon\Carbon::parse($deal->due_date)->formatLocalized('%d %B %Y') }}</span>
                     </li>
                     <li class="list-group-item">
                         <strong>Vorraussichtliches Einkommen</strong>
-                        <span class="pull-right">{{ $deal->revenue }}</span>
+                        <span class="pull-right">{{ number_format($deal->revenue,2,',', '.') }} €</span>
                     </li>
                     <li class="list-group-item">
                         <strong>Gesamtdauer in Monaten</strong>
