@@ -26,6 +26,15 @@
                         <strong>Deal Beschreibung</strong><br>
                         {!! $deal->short_desc !!}
                     </li>
+                    <li class="list-group-item">
+                        <strong>Complete</strong><br>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ $deal->complete }}"
+                                 aria-valuemin="0" aria-valuemax="100" style="width:{{ $deal->complete }}%">
+                                {{ $deal->complete }}%
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
