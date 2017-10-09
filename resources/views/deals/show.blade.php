@@ -112,10 +112,6 @@
                         <span class="pull-right">{{ \Carbon\Carbon::parse($deal->due_date)->formatLocalized('%d %B %Y') }}</span>
                     </li>
                     <li class="list-group-item">
-                        <strong>Vorraussichtliches Einkommen</strong>
-                        <span class="pull-right">{{ number_format($deal->revenue,2,',', '.') }} €</span>
-                    </li>
-                    <li class="list-group-item">
                         <strong>Gesamtdauer in Monaten</strong>
                         <span class="pull-right">{{ $deal->total_peroid }}</span>
                     </li>
@@ -139,16 +135,20 @@
                 </div>
                 <ul class="list-group">
                     <li class="list-group-item">
+                        <strong>Vorraussichtliches Einkommen</strong>
+                        <span class="pull-right">{{ number_format($deal->revenue,2,',', '.') }} €</span>
+                    </li>
+                    <li class="list-group-item">
                         <strong>Interne Kosten</strong>
-                        <span class="pull-right">{{ $deal->cost_intern }}</span>
+                        <span class="pull-right">{{ number_format($deal->cost_intern,2,',', '.') }} €</span>
                     </li>
                     <li class="list-group-item">
                         <strong>Externe Kosten</strong>
-                        <span class="pull-right">{{ $deal->cost_extern }}</span>
+                        <span class="pull-right">{{ number_format($deal->cost_extern,2,',', '.') }} €</span>
                     </li>
                     <li class="list-group-item">
                         <strong>Software Kosten</strong>
-                        <span class="pull-right">{{ $deal->cost_software }}</span>
+                        <span class="pull-right">{{ number_format($deal->cost_software,2,',', '.') }} €</span>
                     </li>
                 </ul>
             </div>
