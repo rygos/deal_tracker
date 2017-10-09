@@ -135,16 +135,20 @@
         <div class="col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-
+                    Kosten
                 </div>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <strong>Business Contact</strong>
-                        <span class="pull-right">{{ $deal->business_contact }}</span>
+                        <strong>Interne Kosten</strong>
+                        <span class="pull-right">{{ $deal->cost_intern }}</span>
                     </li>
                     <li class="list-group-item">
-                        <strong>CostDesk Owner</strong>
-                        <span class="pull-right">{{ DB::table('dt_costdeskowner')->where('id', '=', $deal->costdeskowner)->first()->value }}</span>
+                        <strong>Externe Kosten</strong>
+                        <span class="pull-right">{{ $deal->cost_extern }}</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Software Kosten</strong>
+                        <span class="pull-right">{{ $deal->cost_software }}</span>
                     </li>
                 </ul>
             </div>
