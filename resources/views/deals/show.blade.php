@@ -35,6 +35,15 @@
                             </div>
                         </div>
                     </li>
+                    <li class="list-group-item">
+                        <strong>Gewinnchance</strong>
+                        <span class="pull-right">{{ DB::table('dt_chanceofwin')->where('id', '=', $deal->chanceofwin)->first()->value }}</span>
+                    </li>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Varianten</strong>
+                        <span class="pull-right">{{ $deal->variants }}</span>
+                    </li>
                 </ul>
             </div>
         </div>
