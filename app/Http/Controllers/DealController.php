@@ -13,7 +13,7 @@ class DealController extends Controller
         //laden der deals
         //$deals = \DB::table('dt_master')->where('costdeskowner', '=', AuthHelper::user()->id)->orderBy('create_date', 'desc')->paginate(20);
         //$deals = \DB::table('dt_master')->orderBy('create_date', 'desc')->paginate(20);
-        $deals = DtMaster::orderBy('real_creations_date', 'desc')->paginate(20);
+        $deals = DtMaster::orderBy('real_creation_date', 'desc')->paginate(20);
 
         //Füllen des Statusarrays
         $status = \DB::table('dt_status')->get();
