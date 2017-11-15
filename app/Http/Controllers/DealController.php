@@ -38,6 +38,9 @@ class DealController extends Controller
 
     public function show($deal_id)
     {
+
+        // Todo: Auflistung der Verbundenen Alten Deals hinzufügen
+
         $deal = \DB::table('dt_master')->where('id', '=', $deal_id)->first();
 
         return view('deals.show', [
