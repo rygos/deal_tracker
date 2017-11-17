@@ -44,12 +44,20 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">@yield('page_heading')
-                    <form>
-                        <input type="button" value="Go back!" class="pull-right" onclick="history.back()">
-                        </input>
-                    </form>
-                    </h1>
+                    <div class="page-header">
+                        <h1 class="page-header">
+                            @yield('page_heading')
+                        </h1>
+                        <div class="btn-group pull-right">
+                            <form>
+                                <input type="button" value="Go back!" class="btn btn-default btn-sm" onclick="history.back()">
+                                </input>
+                            </form>
+                            <a href="#" class="btn btn-default btn-sm">## Lock</a>
+                            <a href="#" class="btn btn-default btn-sm">## Delete</a>
+                            <a href="#" class="btn btn-default btn-sm">## Move</a>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
