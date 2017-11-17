@@ -32,7 +32,7 @@ Route::get('/deal/{deal_id}', 'DealController@show');
 Route::get('reports', 'Reports\CockpitController@index');
 Route::get('reports/deals_per_month/{year?}/{month?}', 'Reports\DealsPerMonthController@index');
 
-Route::get('reports/updated_deals_per_week/', 'Reports\UpdatedDealsPerWeekController@index');
+Route::get('reports/updated_deals_per_week', 'Reports\UpdatedDealsPerWeekController@index');
 
 
 //Search Route
