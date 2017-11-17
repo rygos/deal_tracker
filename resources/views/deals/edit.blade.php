@@ -27,7 +27,7 @@
                     <label>Typen</label>
                     <div class="checkbox">
                         <label>
-                            <input name="imac" type="checkbox" value="" @if($deal->imac)checked@endif>IMAC
+                            <input name="imac" type="checkbox" value="" @if($deal->imac) checked @endif>IMAC
                         </label>
                     </div>
                     <div class="checkbox">
