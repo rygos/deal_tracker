@@ -44,11 +44,12 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">@yield('page_heading')</h1>
+                    <h1 class="page-header">@yield('page_heading')
                     <form>
                         <input type="button" value="Go back!" class="pull-right" onclick="history.back()">
                         </input>
                     </form>
+                    </h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
