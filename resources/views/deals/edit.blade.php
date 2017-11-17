@@ -8,26 +8,26 @@
                 {!! Form::open(['action' => ['DealController@update', $deal->id], 'method' => 'post', 'role' => 'form']) !!}
                 <div class="form-group">
                     <label>Erstellungsdatum</label>
-                    <input class="form-control" name="create_date" value="{{ date('Y-m-d', time()) }}">
+                    <input class="form-control" name="create_date" value="{{ $deal->create_date }}">
                     <p class="help-block">Automatisches Datum stehen lassen oder im Format YYYY-MM-DD eingeben.</p>
                 </div>
                 <div class="form-group">
                     <label>CRM/WFT</label>
-                    <input name="crmwft" class="form-control" placeholder="WFT/CRM eingeben">
+                    <input name="crmwft" class="form-control" placeholder="WFT/CRM eingeben" value="{{ $deal->crm_wft }}">
                 </div>
                 <div class="form-group">
                     <label>Kunde</label>
-                    <input name="customer" class="form-control" placeholder="Kundenname eingeben">
+                    <input name="customer" class="form-control" placeholder="Kundenname eingeben" value="{{ $deal->customer }}">
                 </div>
                 <div class="form-group">
                     <label>Kurzbeschreibung</label>
-                    <textarea name="short_desc" class="form-control" rows="3"></textarea>
+                    <textarea name="short_desc" class="form-control" rows="3">{{ $deal->short_desc }}</textarea>
                 </div>
                 <div class="form-group">
                     <label>Typen</label>
                     <div class="checkbox">
                         <label>
-                            <input name="imac" type="checkbox" value="">IMAC
+                            <input name="imac" type="checkbox" value="" @if($deal->imac)checked@endif>IMAC
                         </label>
                     </div>
                     <div class="checkbox">
