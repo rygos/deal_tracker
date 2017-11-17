@@ -68,7 +68,7 @@
                     <label>Hersteller</label>
                     <select name="manufacturer" class="form-control">
                         @foreach($manufacturer as $manu)
-                            <option value="{{ $manu->id }}" @if($deal->manufacturer == $manu->id) selected @endif>{{ $manu->value }}</option>
+                            <option value="{{ $manu->id }}" @if($deal->manufaturer == $manu->id) selected @endif>{{ $manu->value }}</option>
                         @endforeach
                     </select>
                 </div>
