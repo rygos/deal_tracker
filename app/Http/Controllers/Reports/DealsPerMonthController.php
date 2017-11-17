@@ -26,6 +26,7 @@ class DealsPerMonthController extends Controller
             ->orderBy('create_date', 'desc')
             ->groupBy('crm_wft')
             ->groupBy('id')
+            ->groupBy('create_date')
             ->select(\DB::raw('*, MAX(real_creation_date)'))
             ->paginate(20);
 
