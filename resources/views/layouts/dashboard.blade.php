@@ -51,6 +51,7 @@
                         <div class="pull-right">
                             <div class="btn-group">
                                 <a href="#" onclick="history.back()" class="btn btn-default btn-sm">Back</a>
+                                <a href="{{ action('DealController@edit', $deal->deal_id) }}" class="btn btn-default btn-sm">edit</a>
                             </div>
                         </div>
                     </div>
