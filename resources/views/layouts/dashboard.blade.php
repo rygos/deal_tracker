@@ -49,13 +49,7 @@
                             @yield('page_heading')
                         </h1>
                         <div class="btn-group pull-right">
-                            <form>
-                                <input type="button" value="Go back!" class="btn btn-default btn-sm" onclick="history.back()">
-                                </input>
-                            </form>
-                            <a href="#" class="btn btn-default btn-sm">## Lock</a>
-                            <a href="#" class="btn btn-default btn-sm">## Delete</a>
-                            <a href="#" class="btn btn-default btn-sm">## Move</a>
+                            <a href="#" onclick="history.back()" class="btn btn-default btn-sm">Back</a>
                         </div>
                     </div>
                 </div>
