@@ -45,11 +45,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="page-header">
-                        <h1 class="page-header">
-                            @yield('page_heading')
-                        </h1>
-                        <div class="btn-group pull-right">
-                            <a href="#" onclick="history.back()" class="btn btn-default btn-sm">Back</a>
+                        <div class="pull-left">
+                            <h1>@yield('page_heading')</h1>
+                        </div>
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <a href="#" onclick="history.back()" class="btn btn-default btn-sm">Back</a>
+                            </div>
                         </div>
                     </div>
                 </div>
