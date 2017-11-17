@@ -98,7 +98,7 @@
                 </div>
                 <div class="form-group">
                     <label>Business Contact</label>
-                    <input name="business_contact" class="form-control" placeholder="Business Contact eingeben" value="{{ $deal->business_contract }}">
+                    <input name="business_contact" class="form-control" placeholder="Business Contact eingeben" value="{{ $deal->business_contact }}">
                 </div>
                 <div class="form-group">
                     <label>CostDeskOwner</label>
