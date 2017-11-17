@@ -114,7 +114,9 @@ class DealController extends Controller
 
     public function edit($deal_id)
     {
-        return view('deals.edit');
+        return view('deals.edit', [
+            'deal_id' => $deal_id,
+        ]);
     }
 
     public function update(Request $request, $deal_id)
