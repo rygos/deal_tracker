@@ -115,9 +115,25 @@ class DealController extends Controller
     public function edit($deal_id)
     {
         $deal = \DB::table('dt_master')->where('id', '=', $deal_id)->first();
+        $product = \DB::table('dt_product')->orderBy('value')->get();
+        $manufacturer = \DB::table('dt_manufacturer')->orderBy('value')->get();
+        $sla = \DB::table('dt_sla')->orderBy('id')->get();
+        $type = \DB::table('dt_type')->orderBy('value')->get();
+        $costdeskowner = \DB::table('dt_costdeskowner')->orderBy('value')->get();
+        $deal_type = \DB::table('dt_dealtype')->get();
+        $status = \DB::table('dt_status')->get();
+        $chanceofwin = \DB::table('dt_chanceofwin')->get();
 
         return view('deals.edit', [
             'deal' => $deal,
+            'product'       => $product,
+            'manufacturer'  => $manufacturer,
+            'sla'           => $sla,
+            'type'          => $type,
+            'costdeskowner' => $costdeskowner,
+            'deal_type'     => $deal_type,
+            'status'        => $status,
+            'chanceofwin'   => $chanceofwin,
         ]);
     }
 
