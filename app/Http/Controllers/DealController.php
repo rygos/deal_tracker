@@ -114,8 +114,10 @@ class DealController extends Controller
 
     public function edit($deal_id)
     {
+        $deal = \DB::table('dt_master')->where('id', '=', $deal_id)->first();
+
         return view('deals.edit', [
-            'deal_id' => $deal_id,
+            'deal' => $deal,
         ]);
     }
 
