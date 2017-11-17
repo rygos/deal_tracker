@@ -5,7 +5,7 @@
     <div class="col-sm-12">
         <div class="row">
             <div class="col-sm-8">
-                {!! Form::open(['action' => ['DealController@update'], 'method' => 'post', 'role' => 'form']) !!}
+                {!! Form::open(['action' => ['DealController@update', $deal->id], 'method' => 'post', 'role' => 'form']) !!}
                 <div class="form-group">
                     <label>Erstellungsdatum</label>
                     <input class="form-control" name="create_date" value="{{ date('Y-m-d', time()) }}">
