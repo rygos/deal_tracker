@@ -25,7 +25,8 @@ class DealsPerMonthController extends Controller
             ->where('create_date', '<=',  $date_end)
             ->orderBy('create_date', 'desc')
             ->groupBy('crm_wft')
-            ->select('*, MAX(create_date)')
+            ->select('*)')
+            ->select(\DB::raw('MAX(real_creation_date)'))
             ->paginate(20);
 
         //Füllen des Statusarrays
