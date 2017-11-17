@@ -123,7 +123,7 @@
                 </div>
                 <div class="form-group">
                     <label>Gesamtdauer</label>
-                    <input name="total_period" class="form-control" placeholder="Gesamtdauer" value="{{ $deal->total_period }}">
+                    <input name="total_period" class="form-control" placeholder="Gesamtdauer" value="{{ $deal->total_peroid }}">
                 </div>
                 <div class="form-group">
                     <label>Deal Typ</label>
