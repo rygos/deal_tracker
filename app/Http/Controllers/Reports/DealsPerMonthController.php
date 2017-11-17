@@ -24,7 +24,8 @@ class DealsPerMonthController extends Controller
         $deals = DtMaster::where('create_date', '>=', $date_start)
             ->where('create_date', '<=',  $date_end)
             ->orderBy('create_date', 'desc')
-            ->groupBy('crm_wft, id')
+            ->groupBy('crm_wft')
+            ->groupBy('id')
             ->select(\DB::raw('*, MAX(real_creation_date)'))
             ->paginate(20);
 
