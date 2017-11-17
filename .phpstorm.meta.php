@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-09-13.
+    * Generated on 2017-11-17.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -139,6 +139,7 @@ namespace PHPSTORM_META {
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'Reliese\Coders\Model\Factory' => \Reliese\Coders\Model\Factory::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
@@ -271,6 +272,7 @@ namespace PHPSTORM_META {
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'Reliese\Coders\Model\Factory' => \Reliese\Coders\Model\Factory::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
@@ -403,6 +405,7 @@ namespace PHPSTORM_META {
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'Reliese\Coders\Model\Factory' => \Reliese\Coders\Model\Factory::class,
     ]));
     override(\App::make(0), map([
         '' => '@',
@@ -535,6 +538,7 @@ namespace PHPSTORM_META {
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'Reliese\Coders\Model\Factory' => \Reliese\Coders\Model\Factory::class,
     ]));
     override(\App::makeWith(0), map([
         '' => '@',
@@ -667,6 +671,7 @@ namespace PHPSTORM_META {
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'Reliese\Coders\Model\Factory' => \Reliese\Coders\Model\Factory::class,
     ]));
     override(\app(0), map([
         '' => '@',
@@ -799,6 +804,7 @@ namespace PHPSTORM_META {
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'Reliese\Coders\Model\Factory' => \Reliese\Coders\Model\Factory::class,
     ]));
     override(\resolve(0), map([
         '' => '@',
@@ -931,6 +937,7 @@ namespace PHPSTORM_META {
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'html' => \Collective\Html\HtmlBuilder::class,
         'form' => \Collective\Html\FormBuilder::class,
+        'Reliese\Coders\Model\Factory' => \Reliese\Coders\Model\Factory::class,
     ]));
 
     override(\Illuminate\Support\Arr::add(0), type(0));

@@ -139,7 +139,7 @@ class DealController extends Controller
 
     public function update(Request $request, $deal_id)
     {
-        $deal = \DB::table('dt_master')->where('id', '=', $deal_id)->first();
+        $deal = DtMaster::where('id', '=', $deal_id)->first();
 
         $deal->create_date = $request->get('create_date');
         $deal->crm_wft = $request->get('crmwft');

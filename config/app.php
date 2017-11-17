@@ -175,6 +175,7 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Reliese\Coders\CodersServiceProvider::class,
         //
 
         /*
