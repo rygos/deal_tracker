@@ -24,6 +24,7 @@ class DealsPerMonthController extends Controller
         $deals = DtMaster::where('create_date', '>=', $date_start)
             ->where('create_date', '<=',  $date_end)
             ->orderBy('create_date', 'desc')
+            ->groupBy('crm_wft')
             ->paginate(20);
 
         //Füllen des Statusarrays
