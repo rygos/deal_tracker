@@ -44,11 +44,19 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <form>
-                        <input type="button" value="Go back!" onclick="history.back()">
-                        </input>
-                    </form>
-                    <h1 class="page-header">@yield('page_heading')</h1>
+                    <div class="page-header">
+                        <div class="pull-left">
+                            <h1>@yield('page_heading')</h1>
+                        </div>
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <a href="#" onclick="history.back()" class="btn btn-default btn-sm">Back</a>
+                                @if(isset($deal))
+                                    <a href="{{ action('DealController@edit', $deal->id) }}" class="btn btn-default btn-sm">edit</a>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

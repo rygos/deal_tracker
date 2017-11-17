@@ -38,6 +38,9 @@ class DealController extends Controller
 
     public function show($deal_id)
     {
+
+        // Todo: Auflistung der Verbundenen Alten Deals hinzufügen
+
         $deal = \DB::table('dt_master')->where('id', '=', $deal_id)->first();
 
         return view('deals.show', [
@@ -111,11 +114,69 @@ class DealController extends Controller
 
     public function edit($deal_id)
     {
-        return view('deals.edit');
+        $deal = \DB::table('dt_master')->where('id', '=', $deal_id)->first();
+        $product = \DB::table('dt_product')->orderBy('value')->get();
+        $manufacturer = \DB::table('dt_manufacturer')->orderBy('value')->get();
+        $sla = \DB::table('dt_sla')->orderBy('id')->get();
+        $type = \DB::table('dt_type')->orderBy('value')->get();
+        $costdeskowner = \DB::table('dt_costdeskowner')->orderBy('value')->get();
+        $deal_type = \DB::table('dt_dealtype')->get();
+        $status = \DB::table('dt_status')->get();
+        $chanceofwin = \DB::table('dt_chanceofwin')->get();
+
+        return view('deals.edit', [
+            'deal' => $deal,
+            'product'       => $product,
+            'manufacturer'  => $manufacturer,
+            'sla'           => $sla,
+            'type'          => $type,
+            'costdeskowner' => $costdeskowner,
+            'deal_type'     => $deal_type,
+            'status'        => $status,
+            'chanceofwin'   => $chanceofwin,
+        ]);
     }
 
     public function update(Request $request, $deal_id)
     {
+        $deal = DtMaster::whereId($deal_id)->first();
 
+        $deal->create_date = $request->get('create_date');
+        $deal->crm_wft = $request->get('crmwft');
+        $deal->customer = $request->get('customer');
+        $deal->short_desc = $request->get('short_desc');
+        $deal->onsitecc = $request->get('onsitecc');
+        $deal->imac = $request->get('imac');
+        $deal->resold_sub = $request->get('resold_sub');
+        $deal->callrouting = $request->get('callrouting');
+        $deal->swap = $request->get('swap');
+        $deal->product = $request->get('product');
+        $deal->manufaturer = $request->get('manufacturer');
+        $deal->volume = $request->get('volume');
+        $deal->sla = $request->get('sla');
+        $deal->type = $request->get('type');
+        $deal->go_nogo = $request->get('go_nogo');
+        $deal->business_contact = $request->get('business_contact');
+        $deal->costdeskowner = $request->get('costdeskowner');
+        $deal->todo_remarks = $request->get('todo_remarks');
+        $deal->due_date = $request->get('due_date');
+        $deal->revenue = $request->get('revenue');
+        $deal->total_peroid = $request->get('total_peroid');
+        $deal->deal_type = $request->get('deal_type');
+        $deal->status = $request->get('status');
+        $deal->complete = $request->get('complete');
+        $deal->chanceofwin = $request->get('chanceofwin');
+        $deal->closing_date = $request->get('closing_date');
+        $deal->est_start_date = $request->get('est_start_date');
+        $deal->competitors = $request->get('competitors');
+        $deal->winloss_outcome = $request->get('winloss_outcome');
+        $deal->cost_intern = $request->get('cost_intern');
+        $deal->cost_extern = $request->get('cost_extern');
+        $deal->cost_software = $request->get('cost_software');
+        $deal->variants = $deal->variants + 1;
+
+        $deal->save();
+
+        return redirect()->action('DealController@show', $deal->id);
     }
 }
