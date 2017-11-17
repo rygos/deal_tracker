@@ -26,6 +26,23 @@
                         <strong>Deal Beschreibung</strong><br>
                         {!! $deal->short_desc !!}
                     </li>
+                    <li class="list-group-item">
+                        <strong>Complete</strong><br>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ $deal->complete }}"
+                                 aria-valuemin="0" aria-valuemax="100" style="width:{{ $deal->complete }}%">
+                                {{ $deal->complete }}%
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Gewinnchance</strong>
+                        <span class="pull-right">{{ DB::table('dt_chanceofwin')->where('id', '=', $deal->chanceofwin)->first()->value }}</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Varianten</strong>
+                        <span class="pull-right">{{ $deal->variants }}</span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -112,10 +129,6 @@
                         <span class="pull-right">{{ \Carbon\Carbon::parse($deal->due_date)->formatLocalized('%d %B %Y') }}</span>
                     </li>
                     <li class="list-group-item">
-                        <strong>Vorraussichtliches Einkommen</strong>
-                        <span class="pull-right">{{ number_format($deal->revenue,2,',', '.') }} €</span>
-                    </li>
-                    <li class="list-group-item">
                         <strong>Gesamtdauer in Monaten</strong>
                         <span class="pull-right">{{ $deal->total_peroid }}</span>
                     </li>
@@ -135,16 +148,24 @@
         <div class="col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-
+                    Kosten
                 </div>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <strong>Business Contact</strong>
-                        <span class="pull-right">{{ $deal->business_contact }}</span>
+                        <strong>Vorraussichtliches Einkommen</strong>
+                        <span class="pull-right">{{ number_format($deal->revenue,2,',', '.') }} €</span>
                     </li>
                     <li class="list-group-item">
-                        <strong>CostDesk Owner</strong>
-                        <span class="pull-right">{{ DB::table('dt_costdeskowner')->where('id', '=', $deal->costdeskowner)->first()->value }}</span>
+                        <strong>Interne Kosten</strong>
+                        <span class="pull-right">{{ number_format($deal->cost_intern,2,',', '.') }} €</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Externe Kosten</strong>
+                        <span class="pull-right">{{ number_format($deal->cost_extern,2,',', '.') }} €</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Software Kosten</strong>
+                        <span class="pull-right">{{ number_format($deal->cost_software,2,',', '.') }} €</span>
                     </li>
                 </ul>
             </div>

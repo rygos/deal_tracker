@@ -115,7 +115,7 @@
                         <td>Ratio</td>
                         @for($i = 11; $i >= 0; $i--)
                             <td>
-                                {{ number_format($data[$i]['cancelratio']  / ($data[$i]['tnd']+1), 0, ',', '.') }}%
+                                {{@number_format(($data[$i]['cancelratio'] * 100) / $data[$i]['tnd'], 2, ',', '.') }}%
                             </td>
                         @endfor
                     </tr>
