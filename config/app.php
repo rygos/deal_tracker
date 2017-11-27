@@ -3,7 +3,7 @@
 return [
     //Seitenweite Settings
     'page' => [
-        'version' => '0.0.1', //Seitenversion
+        'version' => '0.0.7', //Seitenversion
     ],
 
     /*
