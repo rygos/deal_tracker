@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function search($term = ''){
-        $deals = DtMaster::where('crm_wft', 'like','%'.$term.'%')
+    public function search(Request $request, $term = ''){
+        $deals = DtMaster::where('crm_wft', 'like','%'.$request->get('term').'%')
             ->orderBy('create_date', 'desc')
             ->paginate(20);
 
