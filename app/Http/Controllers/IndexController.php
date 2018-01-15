@@ -20,7 +20,6 @@ class IndexController extends Controller
             ->first();
 
         $charts['index_dpm'] = DB::table('dt_master')
-            ->leftJoin('dt_status', 'dt_master.status', '=', 'dt_status.id')
             ->selectRaw('YEAR(dt_master.create_date) as year')
             ->selectRaw('MONTH(dt_master.create_date) as month')
             ->selectRaw('COUNT(id) AS count')
