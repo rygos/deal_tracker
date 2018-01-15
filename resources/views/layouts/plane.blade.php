@@ -27,12 +27,11 @@
 	@if(isset($charts['index_dpm']))
 		<script>
             var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            var color = Chart.helpers.color;
             var barChartData = {
                 labels: ["January", "February", "March", "April", "May", "June", "July"],
                 datasets: [{
                     label: 'Dataset 1',
-                    backgroundColor: color('#ff6384').alpha(0.5).rgbString(),
+                    backgroundColor: '#ff6384',
                     borderColor: '#ff6384',
                     borderWidth: 1,
                     data: [
@@ -46,7 +45,7 @@
                     ]
                 }, {
                     label: 'Dataset 2',
-                    backgroundColor: color('#36a2eb').alpha(0.5).rgbString(),
+                    backgroundColor: '#36a2eb',
                     borderColor: '#36a2eb',
                     borderWidth: 1,
                     data: [
