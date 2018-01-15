@@ -101,7 +101,7 @@
                         New Deals per month
                     </div>
                     <div class="panel-body">
-                        <canvas id="myChart" width="400" height="400"></canvas>
+                        <canvas id="canvas"></canvas>
                     </div>
                 </div>
             </div>
@@ -158,7 +158,7 @@
         };
 
         window.onload = function() {
-            var ctx = document.getElementById("myChart").getContext("2d");
+            var ctx = document.getElementById("canvas").getContext("2d");
             window.myBar = new Chart(ctx, {
                 type: 'bar',
                 data: barChartData,
