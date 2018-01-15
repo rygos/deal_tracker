@@ -35,8 +35,8 @@
                     borderColor: '#ff6384',
                     borderWidth: 1,
                     data: [
-                        @foreach($charts['index_dpm'])
-						{{ $charts['index_dpm'].count }}
+                        @foreach($charts['index_dpm'] as $item)
+							{{ $item->count }}
 						@endforeach
                     ]
                 }]
