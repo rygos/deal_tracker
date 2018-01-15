@@ -101,7 +101,7 @@
                         New Deals per month
                     </div>
                     <div class="panel-body">
-                        <canvas id="canvas"></canvas>
+                        <canvas id="chart_dpm"></canvas>
                     </div>
                 </div>
             </div>
