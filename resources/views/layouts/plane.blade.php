@@ -32,8 +32,8 @@
                 labels: ["January", "February", "March", "April", "May", "June", "July"],
                 datasets: [{
                     label: 'Dataset 1',
-                    backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-                    borderColor: window.chartColors.red,
+                    backgroundColor: color('#ff6384').alpha(0.5).rgbString(),
+                    borderColor: '#ff6384',
                     borderWidth: 1,
                     data: [
                         randomScalingFactor(),
@@ -46,8 +46,8 @@
                     ]
                 }, {
                     label: 'Dataset 2',
-                    backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
-                    borderColor: window.chartColors.blue,
+                    backgroundColor: color('#36a2eb').alpha(0.5).rgbString(),
+                    borderColor: '#36a2eb',
                     borderWidth: 1,
                     data: [
                         randomScalingFactor(),
