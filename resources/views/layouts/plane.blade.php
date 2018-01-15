@@ -36,7 +36,7 @@
                     borderWidth: 1,
                     data: [
                         @foreach($charts['index_dpm'] as $item)
-							{{ $item->count }}
+							{{ $item->count }},
 						@endforeach
                     ]
                 }]
