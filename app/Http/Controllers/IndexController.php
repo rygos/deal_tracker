@@ -24,6 +24,7 @@ class IndexController extends Controller
             ->selectRaw('MONTH(dt_master.create_date) as month')
             ->selectRaw('COUNT(id) AS count')
             ->orderBy('dt_master.create_date')
+            ->groupBy('dt_master.create_date')
             ->groupBy(\DB::raw('YEAR(dt_master.create_date)'))
             ->groupBy(\DB::raw('MONTH(dt_master.create_date)'))
             ->get();
