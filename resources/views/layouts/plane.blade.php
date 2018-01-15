@@ -36,13 +36,7 @@
                     borderWidth: 1,
                     data: [
                         @foreach($charts['index_dpm'])
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
+						{{ $charts['index_dpm'].count }}
 						@endforeach
                     ]
                 }]
