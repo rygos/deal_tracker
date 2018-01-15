@@ -23,5 +23,9 @@
 
 	@yield('body')
 	<script src="{{ asset("assets/scripts/frontend.js") }}" type="text/javascript"></script>
+
+	@if(isset($charts['index_dpm']))
+		ASDASDASD
+	@endif
 </body>
 </html>
